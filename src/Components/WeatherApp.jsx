@@ -120,13 +120,6 @@ function WeatherApp() {
   }
   useEffect(() => {
     search("Tehran");
-    // get user location
-    // const getUserLocation = () => {
-    //   navigator.geolocation.getCurrentPosition((position) => {
-    //     console.log(position.coords.latitude, position.coords.longitude);
-    //   });
-    // };
-    // getUserLocation();
   }, []);
 
   return (
