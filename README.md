@@ -8,11 +8,11 @@ To initialize the project, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/<username>/react-vite-weather-app.git
+   git clone https://github.com/OhSorrow/weather-app.git
    ```
 2. Navigate to the project directory:
    ```sh
-   cd react-vite-weather-app
+   cd weather-app
    ```
 3. Install dependencies:
    ```sh
@@ -58,6 +58,10 @@ The project is structured with a clear separation of source code, dependencies, 
 5. `vite.config.js`: This file is the configuration file for the Vite JavaScript build tool, which helps optimize the project's build process.
 6. `README.md`: This file is a text file written in Markdown, typically used to provide a brief overview or instructions for the project.
 7. `index.html`: This is the main HTML file for the project, which likely serves as the entry point for the web application.
+
+## Live demo
+
+You can visit the live demo at [here](https://weather-app-ho3w.onrender.com/).
 
 ## Configuration
 
