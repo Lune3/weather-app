@@ -62,6 +62,7 @@ function WeatherApp() {
 
   const search = async (city) => {
     if (city !== "") {
+      city = city.trim();
       setLoading(true);
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
       const response = await fetch(url);
