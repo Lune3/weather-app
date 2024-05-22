@@ -59,6 +59,10 @@ The project is structured with a clear separation of source code, dependencies, 
 6. `README.md`: This file is a text file written in Markdown, typically used to provide a brief overview or instructions for the project.
 7. `index.html`: This is the main HTML file for the project, which likely serves as the entry point for the web application.
 
+## Screenshot
+
+![Screenshot of the Weather App](./screenshots/screenshot.png)
+
 ## Live demo
 
 You can visit the live demo at [here](https://weather-app-ho3w.onrender.com/).
