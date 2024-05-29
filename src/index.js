@@ -1,3 +1,3 @@
 import {currentWeather} from "./weatherAPI";
 
-currentWeather("Mumbai");
+currentWeather("London");
