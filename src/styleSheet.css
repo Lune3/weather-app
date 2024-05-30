@@ -1,0 +1,28 @@
+body{
+    background: linear-gradient(125deg in hsl shorter hue,rgb(68, 138, 209) 60%,rgb(179, 179, 179));
+    height: 100vh;
+    display: grid;
+}
+
+.searchSection{
+    position: absolute;
+    left: 80%;
+    top: 2%;
+}
+
+label{
+    font-size: 1.3rem;
+}
+
+input{
+    width: calc(250px + 15%);
+    margin-top: 10px;
+    border-radius: 3px;
+    height: 20px;
+}
+
+.currentWeather,.hourForecast,.daysForecast{
+    background-color: rgb(211, 211, 211,0.5);
+    width: 50px;
+    height: 50px;
+}
