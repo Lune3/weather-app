@@ -1,3 +1,5 @@
+import { extractData } from "./weatherCard";
+
 const weather = (function () {
 
     async function getWeather(url){
@@ -5,7 +7,8 @@ const weather = (function () {
         const countryWeather = await response.json();
         const currentWeather = countryWeather.current;
         const forecast = countryWeather.forecast;
-        console.log(currentWeather,forecast);
+        extractData(currentWeather);
+        console.log(currentWeather);
     }
     return {getWeather};
 })();
