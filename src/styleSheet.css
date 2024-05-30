@@ -60,3 +60,8 @@ input{
     height: 75%;
 }
 
+.hourForecast{
+    display: flex;
+    justify-content: space-around;
+}
+

@@ -1,4 +1,5 @@
-import { extractData } from "./weatherCard";
+import { extractData} from "./weatherCard";
+import { extractDataForecast } from "./forecast";
 
 const weather = (function () {
 
@@ -8,7 +9,8 @@ const weather = (function () {
         const currentWeather = countryWeather.current;
         const forecast = countryWeather.forecast;
         extractData(currentWeather);
-        console.log(currentWeather);
+        extractDataForecast(forecast);
+        // console.log(forecast);
     }
     return {getWeather};
 })();

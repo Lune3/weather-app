@@ -16,7 +16,6 @@ function extractData(currentWeather){
 const currentWeatherCard = document.querySelector(".currentWeather");
 
 function setTemp(currTemp,feelsLike){
-    console.log(currentWeatherCard);
     const div = createDiv("tempDiv");
     const temp = createH1(currTemp,currTemp);
     const pFeels = createP(`feels like ${feelsLike}`,"feels");
@@ -37,7 +36,6 @@ function setExtraParameter(humidity,uv,wind){
     div.append(createP(`Humidity ${humidity}`),createP(`UV index ${uv}`),createP(`Wind speed ${wind} kph`));
     currentWeatherCard.append(div);
 }
-
 
 
 export {extractData}
