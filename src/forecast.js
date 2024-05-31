@@ -1,16 +1,18 @@
-import {format} from 'date-fns';
+import {format,getHours,add} from 'date-fns';
 import { createDiv,createH1,createH2,createP,createimg } from './create';
+import { currentWeather } from './weatherAPI';
 
 const weatherHourCard = document.querySelector(".hourForecast");
+const dayForecast = document.querySelector(".daysForecast");
 
 function extractDataForecast(forecast){
     const weatherHourForecast = forecast.forecastday;
-    console.log(weatherHourForecast);
     displayHourForecast(weatherHourForecast);
+    displayDayForecast(weatherHourForecast);
 }
 
 function displayHourForecast(weatherHourForecast){
-    const currentHour = parseInt(format(new Date(),"h")) + 12;
+    let currentHour = parseInt(format(new Date(),'H'));
     for(let i = 0;i < 6;i++){
         if(currentHour + i > 23){
             buildCard(weatherHourForecast,currentHour + i - 24,1);
@@ -29,8 +31,26 @@ function buildCard(weatherHourForecast,currHour,day){
     const rainChance = hourForecast.chance_of_rain;
     
     const div = createDiv("weatherCard");
-    div.append(createP(currHour),createimg(icon),createP(temp),createP(rainChance));
+    div.append(createP(`${currHour}:00`),createimg(icon),createP(temp),createP(rainChance));
     weatherHourCard.append(div);
 }
+
+function displayDayForecast(forecast){
+    console.log(forecast);
+    for(let i = 1;i < 4;i++){
+        let day = format(add(new Date(),{days:i}),'EEEE');
+        // buildDayCard(day,i,forecast);
+    }
+}
+
+function buildDayCard(day,date,forecast){
+    const icon = forecast[date];
+    const maxTemp = forecast[date].day.maxtemp_c;
+    const minTemp = forecast[date].day.mintemp_c;   
+    const div = createDiv(`dayForecastCard`);
+    div.append(createP(`${day}`),createimg(icon),createP(`${maxTemp}/${minTemp}`));
+    div.append(dayForecast);
+}
+
 
 export {extractDataForecast};
