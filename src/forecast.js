@@ -13,7 +13,7 @@ function extractDataForecast(forecast){
 
 function displayHourForecast(weatherHourForecast){
     let currentHour = parseInt(format(new Date(),'H'));
-    for(let i = 0;i < 6;i++){
+    for(let i = 1;i < 7;i++){
         if(currentHour + i > 23){
             buildCard(weatherHourForecast,currentHour + i - 24,1);
         }
@@ -36,20 +36,20 @@ function buildCard(weatherHourForecast,currHour,day){
 }
 
 function displayDayForecast(forecast){
-    console.log(forecast);
+    // console.log(forecast);
     for(let i = 1;i < 4;i++){
         let day = format(add(new Date(),{days:i}),'EEEE');
-        // buildDayCard(day,i,forecast);
+        buildDayCard(day,i,forecast);
     }
 }
 
 function buildDayCard(day,date,forecast){
-    const icon = forecast[date];
+    const icon = forecast[date].day.condition.icon;
     const maxTemp = forecast[date].day.maxtemp_c;
     const minTemp = forecast[date].day.mintemp_c;   
     const div = createDiv(`dayForecastCard`);
-    div.append(createP(`${day}`),createimg(icon),createP(`${maxTemp}/${minTemp}`));
-    div.append(dayForecast);
+    div.append(createP(`${day}`),createimg(icon),createP(`${maxTemp} / ${minTemp}`));
+    dayForecast.append(div);
 }
 
 

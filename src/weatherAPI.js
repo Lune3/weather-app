@@ -10,7 +10,6 @@ const weather = (function () {
         const forecast = countryWeather.forecast;
         extractData(currentWeather);
         extractDataForecast(forecast);
-        // console.log(currentWeather);
     }
     return {getWeather};
 })();
