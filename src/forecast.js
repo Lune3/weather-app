@@ -31,7 +31,7 @@ function buildCard(weatherHourForecast,currHour,day){
     const rainChance = hourForecast.chance_of_rain;
     
     const div = createDiv("weatherCard");
-    div.append(createP(`${currHour}:00`),createimg(icon),createP(temp),createP(rainChance));
+    div.append(createP(`${currHour}:00`),createimg(icon),createP(`${temp}° C`),createP(`Rain ${rainChance}%`));
     weatherHourCard.append(div);
 }
 

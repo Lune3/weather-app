@@ -119,3 +119,41 @@ input{
     font-size: 1.2rem;
 }
 
+
+.hourForecast{
+    padding: 20px;
+    gap: 20px;
+}
+
+.weatherCard{
+    background-color: rgb(242, 242, 242);
+    border-radius: 10px;
+    flex-grow: 1;
+    height: max(75%,250px);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 15px rgb(113, 113, 113);
+}
+
+.weatherCard p{
+    margin: 0;
+    font-size: 1.15rem;
+    margin: 5px;
+    text-align: center;
+}
+
+.weatherCard > p:nth-child(1){
+    text-align: center;
+    font-size: 1.2rem !important;
+}
+
+.weatherCard img{
+    width: 100px;
+    align-self: center;
+}
+
+
+
