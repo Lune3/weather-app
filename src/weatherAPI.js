@@ -11,7 +11,9 @@ const weather = (function () {
             const countryWeather = await response.json();
             const currentWeather = countryWeather.current;
             const forecast = countryWeather.forecast;
-            extractData(currentWeather);
+            console.log(countryWeather);
+            let inputCountry = `${countryWeather.location.name}, ${countryWeather.location.country}`;
+            extractData(currentWeather,inputCountry);
             extractDataForecast(forecast);
             country = countrySelected;
         }

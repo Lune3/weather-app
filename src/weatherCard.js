@@ -1,7 +1,7 @@
 import {createP, createH1,createimg,createH2, createDiv} from './create.js'
 import { getCountry } from './weatherAPI.js';
 
-function extractData(currentWeather){
+function extractData(currentWeather,country){
     const currTemp = currentWeather.temp_c;
     const feelsLike = currentWeather.feelslike_c;
     const icon = currentWeather.condition.icon;
@@ -10,17 +10,17 @@ function extractData(currentWeather){
     const uv = currentWeather.uv;
     const wind = currentWeather.wind_kph;
     
-    setTemp(currTemp,feelsLike);
+    setTemp(country,currTemp,feelsLike);
     setIcon(icon,text);   
     setExtraParameter(humidity,uv,wind);  
 }
 const currentWeatherCard = document.querySelector(".currentWeather");
 
-function setTemp(currTemp,feelsLike){
+function setTemp(country,currTemp,feelsLike){
     const div = createDiv("tempDiv");
     const temp = createH1(`${currTemp}° C`,currTemp);
     const pFeels = createP(`feels like ${feelsLike}`,"feels");
-    div.append(temp,pFeels);
+    div.append(createP(country),temp,pFeels);
     currentWeatherCard.append(div);
 }
 

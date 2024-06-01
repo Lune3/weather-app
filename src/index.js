@@ -8,6 +8,7 @@ const input = document.querySelector("input");
 const divs = document.querySelectorAll(".grid div");
 
 
+
 button.addEventListener("click",() => {
     currentWeather(`${input.value}`);
     divs.forEach(div => {
@@ -24,7 +25,7 @@ input.addEventListener("keydown",(e) =>{
         });
         input.value = "";
     }
-    
 })
+
 
 
