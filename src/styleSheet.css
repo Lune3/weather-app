@@ -54,7 +54,7 @@ input:focus{
 
 .currentWeather{
     width: max(85%,150px);
-    height: max(60%,300px);
+    height: max-content;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     justify-self: center;
