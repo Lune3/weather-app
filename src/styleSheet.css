@@ -1,7 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mukta&family=Ubuntu&display=swap');
+
 body{
-    background: linear-gradient(125deg in hsl shorter hue,rgb(68, 138, 209) 60%,rgb(179, 179, 179));
+    background: linear-gradient(125deg in hsl shorter hue,rgb(68, 138, 209) 60%,rgba(179, 179, 179, 0.711));
     height: 100vh;
     margin: 0;
+
+  font-family: "Lato", sans-serif;
 }
 
 .searchSection{
@@ -30,7 +35,7 @@ input{
 }
 
 .currentWeather,.hourForecast,.daysForecast{
-    background-color: rgba(236, 236, 236, 0.4);
+    background-color: rgba(247, 247, 247, 0.3);
     width: 250px;
     height: 250px;
     border-radius: 10px;
@@ -55,7 +60,7 @@ input{
 .hourForecast{
     justify-self: center;
     align-self: center;
-    width: max(65%,250px);
+    width: max-content;
     height: max(45%,300px);
 }
 
@@ -64,14 +69,14 @@ input{
     justify-self: center;
     width: 50%;
     height: 75%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
 }
 
 .hourForecast{
-    display: flex;
-    justify-content: space-around;
-}
-
-.daysForecast{
     display: flex;
     justify-content: space-around;
 }
@@ -105,7 +110,8 @@ input{
 }
 
 .iconDiv p{
-    font-size: 1.7rem;
+    font-size: 1.2rem;
+    padding: 10px;
     margin: 0;
     text-align: center;
     margin-top: 10px;
@@ -129,7 +135,6 @@ input{
     background-color: rgb(242, 242, 242);
     border-radius: 10px;
     flex-grow: 1;
-    height: max(75%,250px);
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -140,7 +145,7 @@ input{
 
 .weatherCard p{
     margin: 0;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     margin: 5px;
     text-align: center;
 }
@@ -154,6 +159,27 @@ input{
     width: 100px;
     align-self: center;
 }
+
+.dayForecastCard{
+    background-color: rgb(242, 242, 242);
+    box-shadow: 2px 2px 15px rgb(113, 113, 113);
+    flex-grow: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dayForecastCard img{
+    width: 90px;
+    height: auto;
+}
+
+.dayForecastCard p{
+    font-size: 1.1rem;
+}
+
 
 
 

@@ -48,7 +48,7 @@ function buildDayCard(day,date,forecast){
     const maxTemp = forecast[date].day.maxtemp_c;
     const minTemp = forecast[date].day.mintemp_c;   
     const div = createDiv(`dayForecastCard`);
-    div.append(createP(`${day}`),createimg(icon),createP(`${maxTemp} / ${minTemp}`));
+    div.append(createP(`${day}`),createimg(icon),createP(`${maxTemp} / ${minTemp} °C`));
     dayForecast.append(div);
 }
 

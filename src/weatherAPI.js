@@ -19,5 +19,4 @@ function currentWeather(country){
     weather.getWeather(url);
 }
 
-
 export{currentWeather};
