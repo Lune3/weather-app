@@ -1,13 +1,19 @@
 import {currentWeather} from "./weatherAPI";
 import './styleSheet.css';
 
-currentWeather("New Delhi");
+currentWeather("London");
 
 const button = document.querySelector("button");
 const input = document.querySelector("input");
+const divs = document.querySelectorAll(".grid div");
+
 
 button.addEventListener("click",() => {
-    currentWeather(input.value);
+    currentWeather(`${input.value}`);
+    divs.forEach(div => {
+        div.textContent = "";
+    });
     input.value = "";
-});
+})
+
 
