@@ -1,7 +1,7 @@
 import {currentWeather} from "./weatherAPI";
 import './styleSheet.css';
 
-currentWeather("London");
+currentWeather("New Delhi");
 
 const button = document.querySelector("button");
 const input = document.querySelector("input");
