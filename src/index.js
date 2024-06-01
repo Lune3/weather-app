@@ -16,4 +16,15 @@ button.addEventListener("click",() => {
     input.value = "";
 })
 
+input.addEventListener("keydown",(e) =>{
+    if(e.key === "Enter"){
+        currentWeather(`${input.value}`);
+        divs.forEach(div => {
+            div.textContent = "";
+        });
+        input.value = "";
+    }
+    
+})
+
 

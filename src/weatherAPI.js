@@ -16,16 +16,25 @@ const weather = (function () {
             country = countrySelected;
         }
         catch(error){
-            alert("Wrong country");
+            alert("Wrong Country");
             currentWeather(country);
         }
     }
-    return {getWeather};
+
+    function giveCountry(){
+        return country;
+    }
+
+    return {getWeather,giveCountry};
 })();
+
+function getCountry(){
+    return weather.giveCountry();
+}
 
 function currentWeather(country){
     let url = `https://api.weatherapi.com/v1/forecast.json?key=e6cd629d32c24ad8941174840240106&q=${country}&days=4`;
     weather.getWeather(url,country);
 }
 
-export{currentWeather};
+export{currentWeather,getCountry};

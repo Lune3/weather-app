@@ -1,4 +1,5 @@
 import {createP, createH1,createimg,createH2, createDiv} from './create.js'
+import { getCountry } from './weatherAPI.js';
 
 function extractData(currentWeather){
     const currTemp = currentWeather.temp_c;
