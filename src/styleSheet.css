@@ -163,6 +163,7 @@ input:focus{
 .weatherCard > p:nth-child(1){
     text-align: center;
     font-size: 1.2rem !important;
+    font-weight: 600;
 }
 
 .weatherCard img{
