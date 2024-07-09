@@ -35,7 +35,7 @@ function getCountry(){
 }
 
 function currentWeather(country){
-    let url = `https://api.weatherapi.com/v1/forecast.json?key=e6cd629d32c24ad8941174840240106&q=${country}&days=4`;
+    let url = `https://api.weatherapi.com/v1/forecast.json?key=710011f9a0e348f4a4d155241240907&q=${country}&days=4`;
     weather.getWeather(url,country);
 }
 
