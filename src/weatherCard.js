@@ -18,7 +18,7 @@ const currentWeatherCard = document.querySelector(".currentWeather");
 
 function setTemp(country,currTemp,feelsLike){
     const div = createDiv("tempDiv");
-    const temp = createH1(`${currTemp}° C`,currTemp);
+    const temp = createH1(`${currTemp}° C`);
     const pFeels = createP(`feels like ${feelsLike}`,"feels");
     div.append(createP(country),temp,pFeels);
     currentWeatherCard.append(div);

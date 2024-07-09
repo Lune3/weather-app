@@ -36,7 +36,6 @@ function buildCard(weatherHourForecast,currHour,day){
 }
 
 function displayDayForecast(forecast){
-    // console.log(forecast);
     for(let i = 1;i < 4;i++){
         let day = format(add(new Date(),{days:i}),'EEEE');
         buildDayCard(day,i,forecast);

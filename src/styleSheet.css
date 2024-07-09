@@ -95,10 +95,10 @@ input:focus{
     margin-bottom: auto;
 }
 
-.tempDiv h1{
-    font-size: 5rem;
+.tempDiv > h1{
+    font-size: 4rem;
     margin: 0;
-}
+} 
 
 .tempDiv p{
     margin: 0;
@@ -189,6 +189,7 @@ input:focus{
 
 .dayForecastCard p{
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
 button{
