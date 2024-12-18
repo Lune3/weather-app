@@ -13,7 +13,7 @@ function WeatherApp() {
 
   const weatherImages = {
     Clear: sunny,
-    Dust: sunny,
+    Dust:sunny,
     Clouds: cloudy,
     Rain: rainy,
     Thunderstorm: rainy,
@@ -21,10 +21,11 @@ function WeatherApp() {
     Snow: snowy,
     Haze: cloudy,
     Mist: cloudy,
+    Sunny:sunny,
   };
 
   const weatherImage = data.weatherType
-    ? weatherImages[data.weatherType]
+    ? weatherImages[data.weatherType.trim()]
     : null;
 
   const backgroundImages = {
@@ -35,10 +36,11 @@ function WeatherApp() {
     Thunderstorm: "linear-gradient(to right, #5bc8fb, #88eaff)",
     Snow: "linear-gradient(to right, #aff2ff, #fff)",
     Haze: "linear-gradient(to right, #57d6d4, #71eece)",
+    Sunny:"linear-gradient(to right, #f3b07c, #fcd283)"
   };
 
   const backgroundImage = data.weatherType
-    ? backgroundImages[data.weatherType]
+    ? backgroundImages[data.weatherType.trim()]
     : "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)";
   const handleInputChange = (e) => {
     setLocation(e.target.value);
@@ -64,17 +66,22 @@ function WeatherApp() {
     if (city !== "") {
       city = city.trim();
       setLoading(true);
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
+      const url = `http://api.weatherstack.com/current?access_key=${api_key}&query=${city}&units=m`;
       const response = await fetch(url);
       const result = await response.json();
+      console.log(result);
       if (result.cod === "404") {
         setData({ notfound: true });
-      } else {
+      } 
+      else{
         const {
-          name: cityName,
-          weather: [{ main: weatherType }],
-          main: { temp, humidity },
-          wind: { speed: windSpeed },
+          location: { name: cityName },
+          current: { 
+            temperature: temp, 
+            weather_descriptions: [weatherType], 
+            humidity, 
+            wind_speed: windSpeed 
+          }
         } = result;
         setData({ cityName, weatherType, temp, humidity, windSpeed });
         setLocation("");
@@ -88,7 +95,7 @@ function WeatherApp() {
     const position = await getUserLocation();
     const { latitude, longitude } = position.coords;
     if (latitude && longitude) {
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`;
+      const url = `http://api.weatherstack.com/current?access_key=${api_key}&query=${latitude},${longitude}&units=m`;
       const response = await fetch(url);
       const result = await response.json();
       if (result.cod === "404") {
@@ -120,7 +127,7 @@ function WeatherApp() {
     });
   }
   useEffect(() => {
-    search("Tehran");
+    search("New Delhi");
   }, []);
 
   return (
